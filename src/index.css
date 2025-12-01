@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: 'eroded';
+  src: url('../src/assets/fonts/ERODED\ PERSONAL\ USE.ttf');
+}
+@font-face {
+  font-family: 'rusted';
+  src: url('../src/assets/fonts/RUSTED\ PERSONAL\ USE.ttf ');
+}
+@font-face {
+  font-family: 'rustic';
+  src: url('../src/assets/fonts/RusticVintageDemo-Rough.otf ');
+}
+@font-face {
+  font-family: 'grunge';
+  src: url('../src/assets/fonts/Grunger.ttf ');
+}
+@font-face {
+  font-family: 'hardan';
+  src: url('../src/assets/fonts/HardanVintageDemo-Regular.otf ');
+}
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Grunge Portfolio Theme - Dark & Edgy */
+    --background: 0 0% 5%;
+    --foreground: 0 0% 88%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 88%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 88%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 0 78% 56%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 0 78% 56%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 78% 56%;
+
+    --radius: 0.25rem;
+
+    /* Grunge Custom Variables */
+    --grunge-dark: 0 0% 5%;
+    --grunge-darker: 0 0% 3%;
+    --grunge-red: 0 78% 56%;
+    --grunge-red-dark: 0 78% 45%;
+    --grunge-text: 0 0% 88%;
+    --grunge-text-muted: 0 0% 60%;
+    
+    /* Gradients */
+    --gradient-grunge: linear-gradient(135deg, hsl(0 0% 5%), hsl(0 0% 8%));
+    --gradient-red: linear-gradient(135deg, hsl(0 78% 56%), hsl(0 78% 45%));
+    
+    /* Shadows */
+    --shadow-grunge: 0 8px 32px rgba(0, 0, 0, 0.6);
+    --shadow-red-glow: 0 0 30px hsla(0 78% 56% / 0.3);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  h3, h4, h5, h6 {
+    font-family: 'hardan', 'Oswald', sans-serif;
+    letter-spacing: 0.02em;
+    color: rgb(255, 0, 0);
+  }
+  h2 {
+    font-family: 'rustic', 'Oswald', sans-serif;
+    letter-spacing: 0.02em;
+  }
+  h1 {
+    font-family: 'grunge', 'Oswald', sans-serif;
+    letter-spacing: 0.05em;
+  }
+  /* Grunge Texture Overlay */
+  .grunge-texture::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,.03) 2px, rgba(255,255,255,.03) 4px),
+      repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,.03) 2px, rgba(255,255,255,.03) 4px);
+    pointer-events: none;
+    opacity: 0.3;
+  }
+
+  /* Smooth Scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
